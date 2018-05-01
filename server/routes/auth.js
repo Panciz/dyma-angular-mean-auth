@@ -36,7 +36,7 @@ router.get('/refresh-token', (req, res) => {
       res.status(200).json(newToken);
     })
   } else {
-    res.json(403).json('no token to refresh !');
+    res.status(403).json('no token to refresh !');
   }
 
 })
