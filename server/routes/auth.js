@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const User = require('../models/user.model');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 
@@ -15,13 +15,13 @@ router.post('/signin', (req, res) => {
         algorithm: 'RS256',
         expiresIn: '15s',
         subject: user._id.toString()
-      })
+      });
       res.status(200).json(token);
     } else {
       res.status(401).json('signin fail !');
     }
   })
-})
+});
 
 router.get('/refresh-token', (req, res) => {
   const token = req.headers.authorization;
@@ -39,21 +39,21 @@ router.get('/refresh-token', (req, res) => {
     res.status(403).json('no token to refresh !');
   }
 
-})
+});
 
 router.post('/signup', (req, res) => {
   const newUser = new User({
     email: req.body.email,
     name: req.body.name,
     password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(8))
-  })
+  });
 
   newUser.save( (err) => {
     if (err) { res.status(500).json('erreur signup') }  
     res.status(200).json('signup ok !');
   })
 
-})
+});
 
 
 
