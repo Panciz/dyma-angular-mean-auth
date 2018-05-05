@@ -1,14 +1,9 @@
 import { Injectable  } from '@angular/core';
 import { User } from '../models/user.model';
-import { Observable } from 'rxjs/Observable';
+import { Observable ,  BehaviorSubject ,  timer ,  of ,  Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { JwtToken } from '../models/jwt-token.model';
-import { tap } from 'rxjs/operators/tap';
-import { switchMap } from 'rxjs/operators';
-import { timer } from 'rxjs/observable/timer';
-import { of } from 'rxjs/observable/of';
-import { Subscription } from 'rxjs/Subscription';
+import { tap ,  switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable()

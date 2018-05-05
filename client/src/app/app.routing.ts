@@ -3,7 +3,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { ProfileComponent } from './profile/profile.component';
-import { AuthGuard } from './share/guards/auth.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 export const APP_ROUTING: Route[] = [
   { path: '', component: HomepageComponent },

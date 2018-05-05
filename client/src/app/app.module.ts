@@ -9,28 +9,28 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // modules
-import { LayoutModule } from './share/layout/layout.module';
+import { LayoutModule } from './shared/layout/layout.module';
 
 // components
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
-import { TopbarComponent } from './share/components/topbar/topbar.component';
+import { TopbarComponent } from './shared/components/topbar/topbar.component';
 import { ProfileComponent } from './profile/profile.component';
 
 // routing
 import { APP_ROUTING } from './app.routing';
 
 // services
-import { AuthService } from './share/services/auth.service';
-import { UserService } from './share/services/user.service';
+import { AuthService } from './shared/services/auth.service';
+import { UserService } from './shared/services/user.service';
 
 // guards
-import { AuthGuard } from './share/guards/auth.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 // interceptors
-import { AuthInterceptor } from './share/interceptors/auth.interceptor';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
