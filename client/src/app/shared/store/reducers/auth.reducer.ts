@@ -28,8 +28,17 @@ export const initialAuthState: AuthState = {
         return {
           ...state,
           token: action.payload,
-          isLoggedin: true,
+          isLoggedIn: true,
           error: null
+        };
+      }
+      case AuthActionTypes.Logout: {
+        return {
+          ...state,
+          token: null,
+          isLoggedIn: false,
+          error: null,
+          user: null
         };
       }
     }
