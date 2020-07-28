@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment.prod';
 import { ProfileModule } from './profile/profile.module';
 import { CoreModule } from './shared/modules/core.module';
 
@@ -17,6 +18,11 @@ import { AppComponent } from './app.component';
 // routing
 import { APP_ROUTING } from './app.routing';
 
+//ngrx
+
+import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -28,6 +34,13 @@ import { APP_ROUTING } from './app.routing';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTING),
+    StoreModule.forRoot(),
+    StoreDevtoolsModule.instrument({
+      name:'ngrx photo',
+      logOnly: environment.production
+    }),
+    //EffectsModule.forRoot(),
+
   ],
   providers: [
 
