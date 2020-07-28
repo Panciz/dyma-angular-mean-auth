@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
-mongoose.connect('mongodb://angulardyma:123@ds119018.mlab.com:19018/mean-stack', {
+mongoose.connect('mongodb://angulardyma:123123123@localhost/dyma?retryWrites=true&w=majority', {
     keepAlive: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
