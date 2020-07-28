@@ -1,3 +1,5 @@
+import { AuthEffects } from './shared/store/effects/auth.effects';
+import { reducerMap } from './shared/store/index';
 import { environment } from './../environments/environment.prod';
 import { ProfileModule } from './profile/profile.module';
 import { CoreModule } from './shared/modules/core.module';
@@ -34,12 +36,12 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(APP_ROUTING),
-    StoreModule.forRoot(),
+    StoreModule.forRoot(reducerMap),
     StoreDevtoolsModule.instrument({
       name:'ngrx photo',
       logOnly: environment.production
     }),
-    //EffectsModule.forRoot(),
+    EffectsModule.forRoot([AuthEffects]),
 
   ],
   providers: [
