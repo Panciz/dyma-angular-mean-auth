@@ -16,7 +16,7 @@ import { Store, select } from '@ngrx/store';
 })
 export class SignupComponent implements OnInit {
   public form: FormGroup;
-  public error$: Observable<string>;
+  public error$: Observable<Object>;
 
   constructor(
     private store: Store<State>,
