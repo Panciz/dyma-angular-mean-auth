@@ -15,14 +15,23 @@ export const initialAuthState: AuthState = {
   isLoggedIn: false,
   error: null
 };
-export function authReducer(state: AuthState = initialAuthState, action: AuthActions) {
-  switch (action.type) {
-    case AuthActionTypes.SignupError: {
-      return {
-        ...state,
-        error: action.payload
-      };
+  export function authReducer(state: AuthState = initialAuthState, action: AuthActions) {
+    switch (action.type) {
+      case AuthActionTypes.SigninError:
+      case AuthActionTypes.SignupError: {
+        return {
+          ...state,
+          error: action.payload
+        };
+      }
+      case AuthActionTypes.SigninSuccess: {
+        return {
+          ...state,
+          token: action.payload,
+          isLoggedin: true,
+          error: null
+        };
+      }
     }
+    return state;
   }
-  return state;
-}
