@@ -8,3 +8,6 @@ export const errorAuthSelector = createSelector(authSelector, (authState: AuthSt
 export const tokenSelector = createSelector(authSelector, (authState: AuthState) => authState.token);
 
 export const isLoggedInSelector = createSelector(authSelector, (authState: AuthState) => authState.isLoggedIn);
+
+export const currentUserSelector = createSelector(authSelector, (authState: AuthState) => authState.user);
+

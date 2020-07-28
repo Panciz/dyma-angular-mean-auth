@@ -11,7 +11,8 @@ export interface AuthState {
 
 export const initialAuthState: AuthState = {
   user: null,
-  token: null,
+  //all'inizio provo a loggarmi con quello che trovo nel local
+  token: localStorage.getItem('token'),
   isLoggedIn: false,
   error: null
 };
@@ -39,6 +40,12 @@ export const initialAuthState: AuthState = {
           isLoggedIn: false,
           error: null,
           user: null
+        };
+      }
+      case AuthActionTypes.SetCurrentUser: {
+        return {
+          ...state,
+          user: action.payload
         };
       }
     }
